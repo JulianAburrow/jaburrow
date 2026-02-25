@@ -1,0 +1,12 @@
+﻿body {
+    margin: 10px;
+    overflow-y: scroll;
+}
+
+.mud-card {
+    padding: 10px;
+}
+
+.mud-tab {
+    text-transform: none !important;
+}
