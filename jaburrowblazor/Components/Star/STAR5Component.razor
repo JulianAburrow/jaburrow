@@ -1,0 +1,79 @@
+﻿<MudExpansionPanels MultiExpansion="true">
+
+    <MudText Typo="Typo.h4">
+        CRM Data Cleaning
+    </MudText>
+
+    <MudExpansionPanel Expanded="true">
+
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                Situation
+            </MudText>
+        </TitleContent>
+
+        <ChildContent>
+            <MudText>
+                Company CRM data needs cleaning as records are very out of date.
+            </MudText>
+        </ChildContent>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel>
+
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                Task
+            </MudText>
+        </TitleContent>
+
+        <ChildContent>
+            <MudText GutterBottom="true">
+                Design an application to send a templated email to all clients in the database
+                asking them to log in and update their details.
+            </MudText>
+            <MudText>
+                The client can either confirm that their details are correct, update the details
+                or remove the details from the database.
+            </MudText>
+        </ChildContent>
+
+    </MudExpansionPanel>
+
+    <MudExpansionPanel>
+
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                Action
+            </MudText>
+        </TitleContent>
+
+        <ChildContent>
+            <MudText GutterBottom="true">
+                Send an email containing a link to a website where the client's information is
+                retrieved from the database (removing the client's ID from the querystring
+                to prevent anyone from trying to access any other account details).
+            </MudText>
+            <MudText>
+                Record dates and times of visits and updates to enable a follow-up request to those who have either not visited the site
+                or visited the site but didn't update their details.
+            </MudText>
+        </ChildContent>
+    </MudExpansionPanel>
+
+    <MudExpansionPanel>
+
+        <TitleContent>
+            <MudText Typo="Typo.h6">
+                Result
+            </MudText>
+        </TitleContent>
+
+        <ChildContent>
+            <MudText>
+                Success - outstanding response with hundreds of client details being updated.
+            </MudText>
+        </ChildContent>
+    </MudExpansionPanel>
+
+</MudExpansionPanels>

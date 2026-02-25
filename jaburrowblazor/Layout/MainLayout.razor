@@ -1,0 +1,24 @@
+﻿@inherits LayoutComponentBase
+
+
+<MudPopoverProvider />
+<MudThemeProvider />
+<MudSnackbarProvider />
+
+<PageTitle>J Aburrow</PageTitle>
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@(() => DrawerToggle())" />
+        <MudText Typo="Typo.h5" Class="ml-3">Julian Aburrow</MudText>
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        @Body
+    </MudMainContent>
+    <MudScrollToTop TopOffset="200" ScrollBehavior="ScrollBehavior.Smooth">
+        <MudFab Color="Color.Primary" StartIcon="@Icons.Material.Filled.ArrowUpward" />
+    </MudScrollToTop>
+</MudLayout>
