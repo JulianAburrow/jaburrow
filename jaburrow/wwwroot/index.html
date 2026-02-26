@@ -16,6 +16,22 @@
     <!-- If you add any scoped CSS files, uncomment the following to load them
     <link href="jaburrow.styles.css" rel="stylesheet" /> -->
     <script type="importmap"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-GZPHJ8WRG9"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ window.dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-GZPHJ8WRG9', { send_page_view: false });
+    </script>
+    <script>
+        window.blazorGtag = function() {
+            if (typeof gtag === 'function') {
+                gtag.apply(null, arguments);
+            } else {
+                console.warn("gtag not ready", arguments);
+            }
+    };</script>
 </head>
 
 <body>
