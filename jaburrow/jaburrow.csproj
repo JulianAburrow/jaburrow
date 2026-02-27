@@ -21,4 +21,8 @@
     <TypeScriptCompile Include="wwwroot\ga4.d.ts" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\staticwebapp.config.json" CopyToOutputDirectory="Always" />
+  </ItemGroup>
+
 </Project>
