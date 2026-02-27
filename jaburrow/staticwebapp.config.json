@@ -1,9 +1,12 @@
 {
   "$schema": "https://json.schemastore.org/staticwebapp.config.json",
-  "routes": [
-    {
-      "route": "/*",
-      "rewrite": "/index.html"
-    }
-  ]
+  "navigationFallback": {
+    "rewrite": "/index.html",
+    "exclude": [
+      "/css/*",
+      "/images/*",
+      "/_framework/*",
+      "/_content/*"
+    ]
+  }
 }
