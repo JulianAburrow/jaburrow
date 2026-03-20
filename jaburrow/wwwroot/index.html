@@ -42,6 +42,15 @@
             } else {
                 console.warn("gtag not ready", arguments);
             }
+    };
+    </script>
+    <script>window.cookieConsent = {
+        hasConsented: function () {
+            return localStorage.getItem("cookieConsent") === "true";
+        },
+        setConsented: function () {
+            localStorage.setItem("cookieConsent", "true");
+        }
     };</script>
 </head>
 
