@@ -12,10 +12,38 @@
         </MudText>
 
         <MudText GutterBottom="true">
-            Just a fairly straightforward application - with one or two 'gotchas' thrown in for good measure! -
-            which demonstrates my approach to Blazor and MudBlazor in particular and to application architecture
-            in general.
+            ManufacturerManager started life as a straightforward Blazor CRUD app for managing manufacturers and their widgets.
+            It has since grown into something a little more interesting.
         </MudText>
+
+        <MudText GutterBottom="true">
+            Alongside the usual clean architecture, MudBlazor components, and tidy domain modelling, it now includes:
+        </MudText>
+
+        <MudList T="string">
+
+            <MudListItem Icon="@Icons.Material.Filled.Circle">
+                <strong>RAG‑powered AI</strong> that understands the application’s own data
+            </MudListItem>
+
+            <MudListItem Icon="@Icons.Material.Filled.Circle">
+                <strong>Natural‑language‑to‑SQL</strong>, so you can ask questions instead of writing queries
+            </MudListItem>
+
+            <MudListItem Icon="@Icons.Material.Filled.Circle">
+                A UI designed to be pleasant rather than performative
+            </MudListItem>
+
+            <MudListItem Icon="@Icons.Material.Filled.Circle">
+                A structure that favours clarity over cleverness
+            </MudListItem>
+
+        </MudList>
+            
+            <MudText>
+                It’s still a relatively simple application at heart — just one with a few carefully‑placed “gotchas”
+                to demonstrate how I think about architecture, extensibility, and developer experience.
+            </MudText>
 
         <MudText>
             GitHub: <MudLink href="https://github.com/JulianAburrow/ManufacturerManager" target="_blank" rel="noopener noreferrer">ManufacturerManager</MudLink>
