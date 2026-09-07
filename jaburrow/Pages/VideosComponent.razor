@@ -1,0 +1,68 @@
+﻿@page "/videos"
+
+<PageTitle>Videos – Julian Aburrow</PageTitle>
+
+<HeadContent>
+    <meta name="videos"
+          content="Browse all videos by Julian Aburrow, including code and Mercedes Benz." />
+
+    <meta property="og:title" content="Videos – Julian Aburrow" />
+    <meta property="og:description"
+          content="Access videos by Julian Aburrow." />
+</HeadContent>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-6">
+    <MudCard Elevation="3" Class="p-6 mud-card">
+        <MudText Typo="Typo.h3" GutterBottom="true">
+            Videos
+        </MudText>
+
+        <MudTabs Elevation="3" Rounded="true" ApplyEffectsToContainer="true" TabPanelsClass="pa-6"> 
+
+            <MudTabPanel Text="Code" ToolTip="Code">
+
+                <VideoComponent
+                    Url="https://www.youtube.com/embed/Rf8g_zq50WM?rel=0&vq=hd1080"
+                    Title="Speech To Text"
+                    Description="This is a short video demonstrating speech to text in my ManufacturerManager application." />
+
+            </MudTabPanel>
+
+            <MudTabPanel Text="Mercedes Benz 300CE" ToolTip="Mercedes Benz 300CE">
+
+                <VideoComponent
+                    Url="https://www.youtube.com/watch?v=ISL-sHi7mk4?rel=0&vq=hd1080"
+                    Title="Clara #1"
+                    Description="An introduction to my Mercedes W124 300CE daily driver." />
+
+                <VideoComponent
+                    Url="https://www.youtube.com/watch?v=yZ6vbrmKDFk?rel=0&vq=hd1080"
+                    Title="Clara #2"
+                    Description="Some more features of Clara, my Mercedes 300CE." />
+
+                <VideoComponent
+                    Url="https://www.youtube.com/watch?v=F1mShEBuIHU?rel=0&vq=hd1080"
+                    Title="Clara #3"
+                    Description="A few clips of driving in Clara." />
+
+                <VideoComponent
+                    Url="https://www.youtube.com/watch?v=OsYkCkT-isg?rel=0&vq=hd1080"
+                    Title="Clara #4"
+                    Description="Hasn't really been videoing weather and not much has been going on, so here's a few pictures from my first couple of years with Clara, my daily driver..." />
+
+            </MudTabPanel>
+
+            <MudTabPanel Text="Mercedes Benz 280CE" ToolTip="Mercedes Benz 280CE">
+
+                <VideoComponent
+                    Url="https://www.youtube.com/watch?v=SLXEH3QHcyk?rel=0&vq=hd1080"
+                    Title="Bertha #1"
+                    Description="A wet day so I made a video about Bertha!" />
+
+            </MudTabPanel>
+
+        </MudTabs>
+    </MudCard>
+</MudContainer>
+
+
