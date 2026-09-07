@@ -1,0 +1,15 @@
+﻿<MudCard Class="mb-4">
+    <MudCardContent>
+        <MudText Typo="Typo.h5">@Title</MudText>
+        <MudText Typo="Typo.body2">@Description</MudText>
+
+        <div class="video-wrapper">
+            <iframe src="@GetEmbedUrl()"
+                    title="@Title"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+    </MudCardContent>
+</MudCard>
