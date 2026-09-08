@@ -8,5 +8,8 @@
       "/_framework/*",
       "/_content/*"
     ]
+  },
+  "globalHeaders": {
+    "Content-Security-Policy": "default-src 'self'; frame-src https://www.youtube.com https://www.youtube-nocookie.com; script-src 'self' https://www.youtube.com https://www.youtube-nocookie.com https://www.google.com; connect-src 'self' https://www.youtube.com https://www.youtube-nocookie.com; img-src 'self' https://i.ytimg.com data:; style-src 'self' 'unsafe-inline';"
   }
 }
