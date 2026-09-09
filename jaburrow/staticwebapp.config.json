@@ -8,5 +8,8 @@
       "/_framework/*",
       "/_content/*"
     ]
+  },
+  "globalHeaders": {
+    "Referrer-Policy": "strict-origin-when-cross-origin"
   }
 }
