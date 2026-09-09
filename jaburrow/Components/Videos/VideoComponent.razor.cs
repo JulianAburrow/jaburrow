@@ -15,27 +15,38 @@ public partial class VideoComponent
         if (string.IsNullOrWhiteSpace(Url))
             return string.Empty;
 
-        // Handle youtu.be short links
-        if (Url.Contains("youtu.be"))
+        try
         {
-            var id = Url.Split('/').Last();
-            return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
+            var uri = new Uri(Url);
+
+            // Handle youtu.be short links
+            if (uri.Host.Contains("youtu.be"))
+            {
+                var id = uri.AbsolutePath.Trim('/');
+                return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
+            }
+
+            // Handle full YouTube watch URLs
+            if (uri.Host.Contains("youtube.com") && uri.Query.Contains("v="))
+            {
+                var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
+                var id = query["v"]; // <-- THIS is the correct extraction
+
+                return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
+            }
+
+            // Already an embed URL
+            if (uri.AbsolutePath.Contains("/embed/"))
+            {
+                var id = uri.AbsolutePath.Split("/embed/").Last();
+                return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
+            }
+        }
+        catch
+        {
+            // fallback
         }
 
-        // Handle full YouTube watch URLs
-        if (Url.Contains("watch?v="))
-        {
-            var id = Url.Split("watch?v=").Last();
-            return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
-        }
-
-        // If already an embed URL, just append HD params
-        if (Url.Contains("/embed/"))
-        {
-            return Url + "?rel=0&vq=hd1080";
-        }
-
-        // Fallback
         return Url;
     }
 }

@@ -1,13 +1,13 @@
 ﻿<MudCard Class="mb-4">
     <MudCardContent>
-        <MudText Typo="Typo.h5">@Title</MudText>
-        <MudText Typo="Typo.body2">@Description</MudText>
+        <MudText Typo="Typo.h5" GutterBottom="true">@Title</MudText>
+        <MudText Typo="Typo.body2" GutterBottom="true">@Description</MudText>
 
         <div class="video-wrapper">
             <iframe src="@GetEmbedUrl()"
                     title="@Title"
                     frameborder="0"
-                    referrerpolicy="strict-origin-when-cross-origin"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowfullscreen>
             </iframe>
         </div>
