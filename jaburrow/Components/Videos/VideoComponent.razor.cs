@@ -19,23 +19,24 @@ public partial class VideoComponent
         {
             var uri = new Uri(Url);
 
-            // Handle youtu.be short links
+            // youtu.be short links
             if (uri.Host.Contains("youtu.be"))
             {
                 var id = uri.AbsolutePath.Trim('/');
                 return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
             }
 
-            // Handle full YouTube watch URLs
-            if (uri.Host.Contains("youtube.com") && uri.Query.Contains("v="))
+            // youtube.com/watch?v=...
+            if (uri.Host.Contains("youtube.com"))
             {
                 var query = System.Web.HttpUtility.ParseQueryString(uri.Query);
-                var id = query["v"]; // <-- THIS is the correct extraction
+                var id = query["v"];
 
-                return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
+                if (!string.IsNullOrWhiteSpace(id))
+                    return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
             }
 
-            // Already an embed URL
+            // already embed
             if (uri.AbsolutePath.Contains("/embed/"))
             {
                 var id = uri.AbsolutePath.Split("/embed/").Last();
@@ -44,7 +45,14 @@ public partial class VideoComponent
         }
         catch
         {
-            // fallback
+            // ignore
+        }
+
+        // FINAL FALLBACK: ALWAYS convert watch URLs to embed
+        if (Url.Contains("watch?v="))
+        {
+            var id = Url.Split("watch?v=").Last().Split('&').First();
+            return $"https://www.youtube.com/embed/{id}?rel=0&vq=hd1080";
         }
 
         return Url;
