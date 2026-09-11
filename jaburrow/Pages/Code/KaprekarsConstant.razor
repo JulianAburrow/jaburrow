@@ -1,0 +1,54 @@
+﻿@page "/kaprekarsconstant"
+
+<PageTitle>Kaprekar's Constant</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-6">
+    <MudCard Elevation="3" Class="p-6">
+
+        <MudText Typo="Typo.h4" GutterBottom="true">
+            Kaprekar's Constant
+        </MudText>
+
+        <MudText Class="mb-4">
+            Enter a value between 1001 and 9998 with no digit appearing more than three times.
+        </MudText>
+
+        @if (!string.IsNullOrWhiteSpace(ErrorMessage))
+        {
+            <MudAlert Severity="Severity.Error" Dense="true" Class="mb-4">
+                @ErrorMessage
+            </MudAlert>
+        }
+
+        <MudTextField T="int"
+                      Label="Four Digit Number"
+                      Variant="Variant.Outlined"
+                      @bind-Value="KaprekarsInput.FourDigitNumber"
+                      InputType="@InputType.Number"
+                      Pattern="[0-9]*"
+                      MaxLength="4"
+                      Class="mb-4" />
+
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   OnClick="DoCalculations"
+                   Class="mb-4">
+            Check it out
+        </MudButton>
+
+        @if (!string.IsNullOrWhiteSpace(KaprekarsInput.ResultsOutput))
+        {
+            <MudPaper Class="p-4 mb-4" Elevation="1">
+                @foreach (var line in KaprekarsInput.ResultsOutput.Split('\n'))
+                {
+                    <MudText>@line</MudText>
+                }
+            </MudPaper>
+
+            <MudText Typo="Typo.subtitle1">
+                @KaprekarsInput.IterationCount iteration@(KaprekarsInput.IterationCount != 1 ? "s" : "").
+            </MudText>
+        }
+
+    </MudCard>
+</MudContainer>
