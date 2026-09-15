@@ -1,0 +1,32 @@
+﻿@page "/fibonaccisequence"
+
+<HeadContent>
+    <meta name="description"
+          content="Julian Aburrow's Fibonacci Sequence generator implemented in C# and Blazor, displaying values up to a chosen limit." />
+
+    <meta property="og:title"
+          content="Fibonacci Sequence – Julian Aburrow" />
+
+    <meta property="og:description"
+          content="Explore the Fibonacci Sequence with a simple C# implementation in Blazor, showing generated values in a clean formatted list." />
+</HeadContent>
+
+<PageTitle>Fibonacci Sequence</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-6">
+    <MudCard Elevation="3" Class="p-6">
+
+        <MudText Typo="Typo.h4" GutterBottom="true">
+            Fibonacci Sequence
+        </MudText>
+
+        <MudText Typo="Typo.body1" Class="mb-4">
+            As the title suggests...
+        </MudText>
+
+        <MudText Typo="Typo.body1" Style="white-space: pre-line;">
+            @Output
+        </MudText>
+
+    </MudCard>
+</MudContainer>
