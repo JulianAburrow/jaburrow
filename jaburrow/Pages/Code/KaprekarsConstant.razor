@@ -1,12 +1,37 @@
 ﻿@page "/kaprekarsconstant"
 
-<PageTitle>Kaprekar's Constant</PageTitle>
+<PageTitle>Julian Aburrow - Kaprekar's Constant</PageTitle>
+
+<HeadContent>
+    <meta name="description"
+          content="Julian Aburrow's C# implementation of Kaprekar's Constant, including interactive demonstration." />
+
+    <meta property="og:title"
+          content="Kaprekar's Constant – Julian Aburrow" />
+
+    <meta property="og:description"
+          content="Explore Kaprekar's Constant with a C# implementation in Blazor, including an interactive demonstration." />
+</HeadContent>
 
 <MudContainer MaxWidth="MaxWidth.Medium" Class="mt-6">
     <MudCard Elevation="3" Class="p-6">
 
         <MudText Typo="Typo.h4" GutterBottom="true">
             Kaprekar's Constant
+        </MudText>
+
+        <MudText Typo="Typo.body1" Class="mb-4">
+            Kaprekar's Constant is produced by an iterative algorithm named after its inventor,
+            Indian mathematician D. R. Kaprekar. Each iteration starts with a number, sorts the
+            digits into descending and ascending order, and calculates the difference between
+            the two new numbers.
+        </MudText>
+
+        <MudText Typo="Typo.body2" Class="mb-4">
+            From
+            <MudLink Href="https://en.wikipedia.org/wiki/Kaprekar%27s_routine" Target="_blank">
+                Wikipedia
+            </MudLink>
         </MudText>
 
         <MudText Class="mb-4">
