@@ -1,0 +1,71 @@
+﻿@page "/differencebetweentwosquares"
+
+<PageTitle>Diff. Between Two Squares</PageTitle>
+<HeadContent>
+    <meta name="description"
+          content="Julian Aburrow's interactive demonstration of the difference between two squares, including formula and dynamic calculation." />
+
+    <meta property="og:title"
+          content="Difference Between Two Squares – Julian Aburrow" />
+
+    <meta property="og:description"
+          content="Explore the difference between two squares with an interactive Blazor component demonstrating the formula (a + b) × (a − b)." />
+</HeadContent>
+
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-6">
+    <MudCard Elevation="3" Class="p-6">
+
+        <MudText Typo="Typo.h4" GutterBottom="true">
+            Difference Between Two Squares
+        </MudText>  
+
+        <MudText Typo="Typo.body1" Class="mb-4">
+            Pretty easy... but something I had been meaning to write for a while. Just because...
+        </MudText>
+
+        <MudStack Spacing="2">
+
+            <MudItem>
+                <MudText Typo="Typo.subtitle2">First number</MudText>
+                <MudSelect T="int" @bind-Value="CurrentValues.FirstNumber" @bind-Value:after="CalculateDifference">
+                    @foreach (var number in Numbers)
+                    {
+                        <MudSelectItem T="int" Value="@number">@number</MudSelectItem>
+                    }
+                </MudSelect>
+            </MudItem>
+
+            <MudItem>
+                <MudText Typo="Typo.subtitle2">Second number</MudText>
+                <MudSelect T="int" @bind-Value="CurrentValues.SecondNumber" @bind-Value:after="CalculateDifference">
+                    @foreach (var number in Numbers)
+                    {
+                        <MudSelectItem T="int" Value="@number">@number</MudSelectItem>
+                    }
+                </MudSelect>
+            </MudItem>
+
+            <MudDivider Class="my-4" />
+
+            <MudText Typo="Typo.body1">
+                The difference between the square of 
+                <MudText Typo="Typo.body1" Color="Color.Primary" Inline="true" Class="fw-bold">
+                    @CurrentValues.FirstNumber
+                </MudText>
+                and the square of 
+                <MudText Typo="Typo.body1" Color="Color.Primary" Inline="true" Class="fw-bold">
+                    @CurrentValues.SecondNumber
+                </MudText>
+                is 
+                <MudText Typo="Typo.body1" Color="Color.Secondary" Inline="true" Class="fw-bold">
+                    @CurrentValues.Result
+                </MudText>.
+            </MudText>
+
+            <MudText Typo="Typo.body1">(@CurrentValues.FirstNumber + @CurrentValues.SecondNumber) * (@CurrentValues.FirstNumber - @CurrentValues.SecondNumber)</MudText>
+
+        </MudStack>
+
+    </MudCard>
+</MudContainer>
