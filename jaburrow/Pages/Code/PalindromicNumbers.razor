@@ -1,0 +1,51 @@
+﻿@page "/palindromicnumbers"
+
+<PageTitle>Julian Aburrow - Palindromic Numbers</PageTitle>
+
+<HeadContent>
+    <meta name="description"
+          content="Julian Aburrow's C# implementation listing all palindromic numbers between 10 and 1000, including the difference between each consecutive palindrome." />
+
+    <meta property="og:title"
+          content="Palindromic Numbers – Julian Aburrow" />
+
+    <meta property="og:description"
+          content="Explore palindromic numbers between 10 and 1000, including the difference between each palindrome and the previous one." />
+</HeadContent>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-6">
+    <MudCard Elevation="3" Class="p-6">
+
+        <MudText Typo="Typo.h4" GutterBottom="true">
+            Palindromic Numbers
+        </MudText>
+
+        <MudText Typo="Typo.body1" Class="mb-4">
+            A palindromic number is a number that reads the same forwards and backwards.
+            This page lists all palindromic numbers between 10 and 1000, along with the
+            difference between each palindrome and the one immediately before it.
+        </MudText>
+
+        <MudText Typo="Typo.body2" Class="mb-4">
+            From
+            <MudLink Href="https://en.wikipedia.org/wiki/Palindromic_number" Target="_blank">
+                Wikipedia
+            </MudLink>
+        </MudText>
+
+        <MudDivider Class="mb-4" />
+
+        <MudTable Items="Palindromes" Hover="true" Dense="true" Elevation="1">
+            <HeaderContent>
+                <MudTh>Number</MudTh>
+                <MudTh>Difference from Previous</MudTh>
+            </HeaderContent>
+
+            <RowTemplate>
+                <MudTd DataLabel="Number">@context.Number</MudTd>
+                <MudTd DataLabel="Difference">@context.Difference</MudTd>
+            </RowTemplate>
+        </MudTable>
+
+    </MudCard>
+</MudContainer>
